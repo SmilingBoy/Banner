@@ -250,7 +250,12 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     }
 
     public void update(List<?> imageUrls) {
-        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE % imageUrls.size());
+
+        if (imageUrls == null || imageUrls.size() == 0) {
+            return;
+        }
+
+//        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE % imageUrls.size());
         this.imageUrls.clear();
         this.indicatorImages.clear();
         this.imageUrls.addAll(imageUrls);
@@ -410,10 +415,13 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         if (adapter == null) {
             adapter = new BannerPagerAdapter();
             viewPager.addOnPageChangeListener(this);
+            viewPager.setAdapter(adapter);
+            viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE % imageUrls.size(), false);
+        } else {
+            adapter.notifyDataSetChanged();
         }
-        viewPager.setAdapter(adapter);
         viewPager.setFocusable(true);
-        viewPager.setCurrentItem(1);
+//        viewPager.setCurrentItem(1);
         if (gravity != -1) {
             indicator.setGravity(gravity);
         }

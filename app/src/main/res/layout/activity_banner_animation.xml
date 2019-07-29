@@ -7,6 +7,12 @@
     android:clipToPadding="false"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update" />
+
     <com.youth.banner.Banner
         android:id="@+id/banner"
         android:layout_width="match_parent"

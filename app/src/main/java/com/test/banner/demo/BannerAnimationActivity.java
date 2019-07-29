@@ -79,6 +79,15 @@ public class BannerAnimationActivity extends AppCompatActivity implements Adapte
                 .start();
 
 
+        findViewById(R.id.btn_update)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        banner.update(getImages());
+                        Toast.makeText(v.getContext(), "提示", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     @Override
@@ -89,5 +98,16 @@ public class BannerAnimationActivity extends AppCompatActivity implements Adapte
     @Override
     public void onBannerClick(int position) {
         Toast.makeText(getApplicationContext(), "你点击了：" + position, Toast.LENGTH_SHORT).show();
+    }
+
+    private List<String> getImages() {
+        List<String> im
+                = new ArrayList<>();
+        im.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1838281048,3807966177&fm=26&gp=0.jpg");
+        im.add("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1374563669,1118995928&fm=26&gp=0.jpg");
+        im.add("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=251340773,3971422111&fm=26&gp=0.jpg");
+        im.add("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=138136525,1863773672&fm=26&gp=0.jpg");
+        im.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3850508610,3930590534&fm=26&gp=0.jpg");
+        return im;
     }
 }
