@@ -118,12 +118,13 @@
 
 
 ## 使用步骤
+[![](https://jitpack.io/v/SmilingBoy/Banner.svg)](https://jitpack.io/#SmilingBoy/Banner)
 
 #### Step 1.依赖banner
 Gradle 
 ```groovy
 dependencies{
-    compile 'com.youth.banner:banner:1.4.10'  //最新版本
+     implementation 'com.github.SmilingBoy:Banner:2.0.1' //最新版本
 }
 ```
 或者引用本地lib
